@@ -148,7 +148,30 @@
       font-size: 0.9rem;
       color: #666;
     }
-  </style>
+  .hero {
+  background: url('img/hero-interluxe.png') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.hero .btn-descubre {
+  margin-bottom: 80px;
+  background-color: white;
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 </head>
 <body>
   <header>
@@ -163,13 +186,8 @@
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>COLECCIÓN INTERLUXE</h1>
-      <p>Un instante de magia cotidiana. Una colección que convierte lo cotidiano en algo extraordinario, uniendo emoción, diseño y tecnología.</p>
-      <p class="qr-note">Cada taza incluye tecnología QR para revelar una imagen, video o mensaje original.</p>
-      <a href="#coleccion" class="btn-descubre">Descubrir la colección</a>
-    </div>
-  </section>
+  <a href="#coleccion" class="btn-descubre">Descubrir la colección</a>
+</section>
 
   <h1 id="coleccion">✨ Tazas Interactivas – Colección Interluxe</h1>
 
