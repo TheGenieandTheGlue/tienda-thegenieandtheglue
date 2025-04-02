@@ -6,6 +6,10 @@
   <title>Colección Interluxe - The Genie & The Glue</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Outfit', sans-serif;
       margin: 0;
@@ -37,44 +41,31 @@
       background: url('img/hero-interluxe.png') no-repeat center center;
       background-size: cover;
       background-position: center;
-      background-color: rgba(0, 0, 0, 0.4);
-      background-blend-mode: darken;
       color: white;
       text-align: center;
-      padding: 140px 40px;
-      min-height: 90vh;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
       position: relative;
     }
 
-    .hero h1, .hero p {
-      text-shadow: 0 2px 5px rgba(0,0,0,0.7);
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin: 1rem auto;
-      max-width: 600px;
-    }
-
-    .qr-note {
-      font-style: italic;
-      color: #ccc;
-    }
-
-    .btn-descubre {
-      margin-top: 2rem;
+    .hero .btn-descubre {
+      margin-bottom: 80px;
       background-color: white;
       color: black;
       padding: 0.8rem 2rem;
       border-radius: 30px;
       font-weight: bold;
       text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .hero .btn-descubre:hover {
+      background-color: #111;
+      color: white;
     }
 
     h1 {
@@ -148,47 +139,26 @@
       font-size: 0.9rem;
       color: #666;
     }
-  .hero {
-  background: url('img/hero-interluxe.png') no-repeat center center;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: relative;
-}
-
-.hero .btn-descubre {
-  margin-bottom: 80px;
-  background-color: white;
-  color: black;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
+  </style>
 </head>
 <body>
   <header>
     <div><strong>The Genie & The Glue</strong></div>
     <nav>
       <a href="#">Inicio</a>
-      <a href="#">Colección</a>
+      <a href="#coleccion">Colección</a>
       <a href="#">Cómo Funciona</a>
       <a href="#">Personaliza</a>
       <a href="#">Carrito 🛒</a>
     </nav>
   </header>
 
+  <!-- Imagen principal limpia con botón -->
   <section class="hero">
-  <a href="#coleccion" class="btn-descubre">Descubrir la colección</a>
-</section>
+    <a href="#coleccion" class="btn-descubre">Descubrir la colección</a>
+  </section>
 
+  <!-- Colección de productos -->
   <h1 id="coleccion">✨ Tazas Interactivas – Colección Interluxe</h1>
 
   <div class="product-section">
