@@ -176,7 +176,7 @@
         <div class="price">$249.00 MXN</div>
         <div class="buttons">
           <button class="btn-primary">Personalizar y Pedir</button>
-          <button class="btn-secondary">Ver Detalles</button>
+          <button class="btn-secondary" onclick="document.getElementById('modalEssencia').style.display='block'">Ver Detalles</button>
         </div>
       </div>
     </div>
@@ -185,5 +185,36 @@
   <footer>
     Envíos a todo México 🚚 | contacto@thegenieandtheglue.com | WhatsApp disponible
   </footer>
+  <!-- MODAL -->
+<div id="modalEssencia" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('modalEssencia').style.display='none'">&times;</span>
+    <h3>Detalles de la Taza Essencia</h3>
+    <p>Representa tu esencia única. El QR revela una imagen, animación o mensaje especial elegido por ti. Ideal para regalos con significado.</p>
+    <div style="margin-top: 1.5rem; text-align: left;">
+      <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; letter-spacing: 0.5px; color: #333;">Especificaciones</h4>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 0.4rem;"><span style="color:#007BFF">🔷</span> Apta para microondas</li>
+        <li style="margin-bottom: 0.4rem;"><span style="color:#007BFF">🔷</span> Cerámica premium</li>
+        <li style="margin-bottom: 0.4rem;"><span style="color:#007BFF">🔷</span> Sublimado de alta calidad</li>
+        <li style="margin-bottom: 0.4rem;"><span style="color:#007BFF">🔷</span> QR personalizado escaneable</li>
+      </ul>
+    </div>
+    <a href="https://wa.me/5210000000000" target="_blank">
+      <button class="btn-primary" style="margin-top: 1rem; display: block; margin-left: auto; margin-right: auto;">Personalizar pedido</button>
+    </a>
+  </div>
+</div>
+
+<script>
+  // Cierra el modal si el usuario da clic fuera de él
+  window.onclick = function(event) {
+    const modal = document.getElementById('modalEssencia');
+    if (event.target == modal) {
+      modal.style.display = \"none\";
+    }
+  }
+</script>
+
 </body>
 </html>
