@@ -1,118 +1,271 @@
-<!-- PRODUCTO ACENTO -->
-<div class="product">
-  <img src="img/acento.png" alt="Taza Acento">
-  <div class="product-info">
-    <h2>Taza Acento – Color con Carácter</h2>
-    <ul>
-      <li>11 Oz</li>
-      <li>Fondo y Asa de Color</li>
-      <li>Color a elegir</li>
-      <li>Diseño Personalizado</li>
-      <li>QR Interactivo 📱</li>
-    </ul>
-    <div class="price">$269.00 MXN</div>
-    <div class="buttons">
-      <button class="btn-primary">Personalizar y Pedir</button>
-      <button class="btn-secondary" onclick="document.getElementById('modalAcento').style.display='block'">Ver Detalles</button>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colección Interluxe - The Genie & The Glue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      color: #111;
+    }
+
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: url('img/hero-interluxe.png') no-repeat center center;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero .btn-descubre {
+      margin-bottom: 80px;
+      background-color: white;
+      color: black;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .hero .btn-descubre:hover {
+      background-color: #111;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 2.5rem;
+    }
+
+    .product-section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      align-items: center;
+    }
+
+    .product img {
+      max-width: 220px;
+      border-radius: 12px;
+      margin-right: 2rem;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h2 {
+      margin: 0.2rem 0;
+    }
+
+    .product-info ul {
+      padding-left: 1rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: #e60000;
+      margin: 1rem 0;
+    }
+
+    .buttons button {
+      padding: 0.7rem 1.2rem;
+      margin-right: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: #111;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>The Genie & The Glue</strong></div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#coleccion">Colección</a>
+      <a href="#">Cómo Funciona</a>
+      <a href="#">Personaliza</a>
+      <a href="#">Carrito 🛒</a>
+    </nav>
+  </header>
+
+  <!-- Imagen principal limpia con botón -->
+  <section class="hero">
+    <a href="#coleccion" class="btn-descubre">Descubrir la colección</a>
+  </section>
+
+  <!-- Colección de productos -->
+  <h1 id="coleccion">✨ Tazas Interactivas – Colección Interluxe</h1>
+
+  <div class="product-section">
+    <div class="product">
+      <img src="img/essencia.png" alt="Taza Essencia">
+      <div class="product-info">
+        <h2>Taza Essencia – El Lienzo Interactivo</h2>
+        <ul>
+          <li>11 Oz</li>
+          <li>Blanca</li>
+          <li>Cerámica</li>
+          <li>Diseño Personalizado</li>
+          <li>QR Interactivo 📱</li>
+        </ul>
+        <div class="price">$249.00 MXN</div>
+        <div class="buttons">
+          <button class="btn-primary">Personalizar y Pedir</button>
+          <button class="btn-secondary" onclick="document.getElementById('modalEssencia').style.display='block'">Ver Detalles</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- MODAL ACENTO -->
-<div id="modalAcento" class="modal">
+  <footer>
+    Envíos a todo México 🚚 | contacto@thegenieandtheglue.com | WhatsApp disponible
+  </footer>
+  <!-- MODAL -->
+<div id="modalEssencia" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="document.getElementById('modalAcento').style.display='none'">&times;</span>
-    <h3>Detalles de la Taza Acento</h3>
-    <p>Dale personalidad a tu bebida. Esta taza añade un toque vibrante con el color que elijas. Perfecta para destacar tu estilo único desde el primer sorbo.</p>
-
-    <h4 style="margin-top: 1.5rem;">Especificaciones</h4>
-    <ul style="list-style: none; padding: 0;">
-      <li><span style="color:#007BFF">🔷</span> Asa y fondo de color a elegir</li>
-      <li><span style="color:#007BFF">🔷</span> Apta para microondas</li>
-      <li><span style="color:#007BFF">🔷</span> Cerámica premium</li>
-      <li><span style="color:#007BFF">🔷</span> Sublimado de alta calidad</li>
-      <li><span style="color:#007BFF">🔷</span> QR personalizado escaneable</li>
-    </ul>
-
-    <h4 style="margin-top: 2rem;">Colores disponibles</h4>
-    <div class="color-grid" id="colorGrid">
-      <div class="color-option" style="background-color: yellow;"></div>
-      <div class="color-option" style="background-color: skyblue;"></div>
-      <div class="color-option" style="background-color: navy;"></div>
-      <div class="color-option" style="background-color: orange;"></div>
-      <div class="color-option" style="background-color: black;"></div>
-      <div class="color-option" style="background-color: red;"></div>
-      <div class="color-option" style="background-color: pink;"></div>
-      <div class="color-option" style="background-color: purple;"></div>
-      <div class="color-option" style="background-color: green;"></div>
-      <div class="color-option" style="background-color: limegreen;"></div>
-      <div class="color-option" style="background-color: maroon;"></div>
+    <span class="close" onclick="document.getElementById('modalEssencia').style.display='none'">&times;</span>
+    <h3>Detalles de la Taza Essencia</h3>
+    <p>Representa tu esencia única. El QR revela una imagen, animación o mensaje especial elegido por ti. Ideal para regalos con significado.</p>
+    <div style="margin-top: 1.5rem; text-align: left;">
+      <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem; letter-spacing: 0.5px; color: #333;">Especificaciones</h4>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 0.4rem;"><span style="color:#007BFF">🔷</span> Apta para microondas</li>
+        <li style="margin-bottom: 0.4rem;"><span style="color:#007BFF">🔷</span> Cerámica premium</li>
+        <li style="margin-bottom: 0.4rem;"><span style="color:#007BFF">🔷</span> Sublimado de alta calidad</li>
+        <li style="margin-bottom: 0.4rem;"><span style="color:#007BFF">🔷</span> QR personalizado escaneable</li>
+      </ul>
     </div>
-
-    <p id="colorSeleccionado" style="margin-top: 1rem; font-weight: 600; color: #333;"></p>
     <a href="https://wa.me/5210000000000" target="_blank">
-      <button class="btn-primary" style="margin-top: 2rem;">Personalizar pedido</button>
+      <button class="btn-primary" style="margin-top: 1rem; display: block; margin-left: auto; margin-right: auto;">Personalizar pedido</button>
     </a>
   </div>
 </div>
+  <div class="product">
+  ...
+</div>
 
-<!-- ESTILOS ADICIONALES (PEGAR EN TU <style>) -->
-<style>
-  .color-grid {
-    margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    gap: 10px;
-  }
-  .color-option {
-    width: 100%;
-    padding-top: 100%;
-    position: relative;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-  }
-  .color-option::after {
-    content: '✔';
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    font-style: normal;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-  }
-  .color-option.selected::after {
-    display: block;
-  }
-  .color-option.unselected {
-    opacity: 0.5;
-  }
-</style>
+<!-- MODAL -->
+<div id="modalAcento" class="modal">
+  ...
+</div>
 
-<!-- SCRIPT (PEGAR ANTES DE </body>) -->
 <script>
-  // Cerrar modales al dar clic fuera
   window.onclick = function(event) {
-    ['modalAcento', 'modalEssencia'].forEach(id => {
-      const modal = document.getElementById(id);
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    });
+    const modal = document.getElementById('modalAcento');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
   };
 
-  // Selección visual de color
   document.querySelectorAll('.color-option').forEach(option => {
     option.addEventListener('click', () => {
       const wasSelected = option.classList.contains('selected');
       document.querySelectorAll('.color-option').forEach(opt => {
         opt.classList.remove('selected', 'unselected');
       });
+      const colorTexto = option.style.backgroundColor;
       const label = document.getElementById('colorSeleccionado');
       if (!wasSelected) {
         option.classList.add('selected');
@@ -121,10 +274,24 @@
             opt.classList.add('unselected');
           }
         });
-        label.textContent = 'Color elegido: ' + option.style.backgroundColor;
+        label.textContent = 'Color elegido: ' + colorTexto;
       } else {
         label.textContent = '';
       }
     });
   });
 </script>
+
+
+<script>
+  // Cierra el modal si el usuario da clic fuera de él
+  window.onclick = function(event) {
+    const modal = document.getElementById('modalEssencia');
+    if (event.target == modal) {
+      modal.style.display = \"none\";
+    }
+  }
+</script>
+
+</body>
+</html>
