@@ -175,6 +175,40 @@
   color: #333;
   cursor: pointer;
 }
+.color-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 10px;
+}
+.color-option {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+.color-option::after {
+  content: '✔';
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.color-option.selected::after {
+  display: block;
+}
+.color-option.unselected {
+  opacity: 0.5;
+}
 
   </style>
 </head>
@@ -246,17 +280,72 @@
   ...
 </div>
 
-<!-- MODAL -->
-<div id="modalAcento" class="modal">
-  ...
+<!-- Producto Acento -->
+<div class="product">
+  <img src="img/acento.png" alt="Taza Acento">
+  <div class="product-info">
+    <h2>Taza Acento – Color con Carácter</h2>
+    <ul>
+      <li>11 Oz</li>
+      <li>Fondo y Asa de Color</li>
+      <li>Color a elegir</li>
+      <li>Diseño Personalizado</li>
+      <li>QR Interactivo 📱</li>
+    </ul>
+    <div class="price">$269.00 MXN</div>
+    <div class="buttons">
+      <button class="btn-primary">Personalizar y Pedir</button>
+      <button class="btn-secondary" onclick="document.getElementById('modalAcento').style.display='block'">Ver Detalles</button>
+    </div>
+  </div>
 </div>
 
+<!-- Modal Acento -->
+<div id="modalAcento" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('modalAcento').style.display='none'">&times;</span>
+    <h3>Detalles de la Taza Acento</h3>
+    <p>Dale personalidad a tu bebida. Esta taza añade un toque vibrante con el color que elijas. Perfecta para destacar tu estilo único desde el primer sorbo.</p>
+
+    <h4 style="margin-top: 1.5rem;">Especificaciones</h4>
+    <ul style="list-style: none; padding: 0;">
+      <li><span style="color:#007BFF">🔷</span> Asa y fondo de color a elegir</li>
+      <li><span style="color:#007BFF">🔷</span> Apta para microondas</li>
+      <li><span style="color:#007BFF">🔷</span> Cerámica premium</li>
+      <li><span style="color:#007BFF">🔷</span> Sublimado de alta calidad</li>
+      <li><span style="color:#007BFF">🔷</span> QR personalizado escaneable</li>
+    </ul>
+
+    <h4 style="margin-top: 2rem;">Colores disponibles</h4>
+    <div class="color-grid" id="colorGrid">
+      <div class="color-option" style="background-color: yellow;"></div>
+      <div class="color-option" style="background-color: skyblue;"></div>
+      <div class="color-option" style="background-color: navy;"></div>
+      <div class="color-option" style="background-color: orange;"></div>
+      <div class="color-option" style="background-color: black;"></div>
+      <div class="color-option" style="background-color: red;"></div>
+      <div class="color-option" style="background-color: pink;"></div>
+      <div class="color-option" style="background-color: purple;"></div>
+      <div class="color-option" style="background-color: green;"></div>
+      <div class="color-option" style="background-color: limegreen;"></div>
+      <div class="color-option" style="background-color: maroon;"></div>
+    </div>
+
+    <p id="colorSeleccionado" style="margin-top: 1rem; font-weight: 600; color: #333;"></p>
+    <a href="https://wa.me/5210000000000" target="_blank">
+      <button class="btn-primary" style="margin-top: 2rem;">Personalizar pedido</button>
+    </a>
+  </div>
+</div>
+  
 <script>
   window.onclick = function(event) {
-    const modal = document.getElementById('modalAcento');
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+    ['modalAcento', 'modalEssencia'].forEach(id => {
+      const modal = document.getElementById(id);
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
   };
 
   document.querySelectorAll('.color-option').forEach(option => {
@@ -265,7 +354,6 @@
       document.querySelectorAll('.color-option').forEach(opt => {
         opt.classList.remove('selected', 'unselected');
       });
-      const colorTexto = option.style.backgroundColor;
       const label = document.getElementById('colorSeleccionado');
       if (!wasSelected) {
         option.classList.add('selected');
@@ -274,24 +362,14 @@
             opt.classList.add('unselected');
           }
         });
-        label.textContent = 'Color elegido: ' + colorTexto;
+        label.textContent = 'Color elegido: ' + option.style.backgroundColor;
       } else {
         label.textContent = '';
       }
-    });
+       });
   });
-</script>
-
-
-<script>
-  // Cierra el modal si el usuario da clic fuera de él
-  window.onclick = function(event) {
-    const modal = document.getElementById('modalEssencia');
-    if (event.target == modal) {
-      modal.style.display = \"none\";
-    }
-  }
 </script>
 
 </body>
 </html>
+
