@@ -242,6 +242,46 @@
     </a>
   </div>
 </div>
+  <div class="product">
+  ...
+</div>
+
+<!-- MODAL -->
+<div id="modalAcento" class="modal">
+  ...
+</div>
+
+<script>
+  window.onclick = function(event) {
+    const modal = document.getElementById('modalAcento');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  document.querySelectorAll('.color-option').forEach(option => {
+    option.addEventListener('click', () => {
+      const wasSelected = option.classList.contains('selected');
+      document.querySelectorAll('.color-option').forEach(opt => {
+        opt.classList.remove('selected', 'unselected');
+      });
+      const colorTexto = option.style.backgroundColor;
+      const label = document.getElementById('colorSeleccionado');
+      if (!wasSelected) {
+        option.classList.add('selected');
+        document.querySelectorAll('.color-option').forEach(opt => {
+          if (!opt.classList.contains('selected')) {
+            opt.classList.add('unselected');
+          }
+        });
+        label.textContent = 'Color elegido: ' + colorTexto;
+      } else {
+        label.textContent = '';
+      }
+    });
+  });
+</script>
+
 
 <script>
   // Cierra el modal si el usuario da clic fuera de él
