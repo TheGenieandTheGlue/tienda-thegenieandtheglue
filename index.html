@@ -320,29 +320,33 @@
     </a>
   </div>
 </div>
-  <div class="product">
-  ...
-</div>
 
 <!-- Producto Acento -->
-<div class="product">
-  <img src="img/acento.png" alt="Taza Acento">
-  <div class="product-info">
-    <h2>Taza Acento – Color con Carácter</h2>
-    <ul>
-      <li>11 Oz</li>
-      <li>Fondo y Asa de Color</li>
-      <li>Color a elegir</li>
-      <li>Diseño Personalizado</li>
-      <li>QR Interactivo 📱</li>
-    </ul>
-    <div class="price">$269.00 MXN</div>
-    <div class="buttons">
-      <button class="btn-primary">Personalizar y Pedir</button>
-      <button class="btn-secondary" onclick="document.getElementById('modalAcento').style.display='block'">Ver Detalles</button>
+<div class="product-section">
+  <div class="product" style="position: relative;">
+    <img src="img/acento.png" alt="Taza Acento">
+    <div class="product-info">
+      <h2>Taza Acento – Color con Carácter</h2>
+      <ul>
+        <li>11 Oz</li>
+        <li>Fondo y Asa de Color</li>
+        <li>Color a elegir</li>
+        <li>Diseño Personalizado</li>
+        <li>QR Interactivo 📱</li>
+      </ul>
+      <div class="price">$269.00 MXN</div>
+      <div class="buttons">
+        <button class="btn-primary">Personalizar y Pedir</button>
+        <button class="btn-secondary" onclick="document.getElementById('modalAcento').style.display='block'">Ver Detalles</button>
+      </div>
     </div>
+
+    <!-- Franja amarilla al extremo derecho -->
+    <div style="position: absolute; top: 0; right: 0; height: 100%; width: 20px; background-color: #FFD700; border-top-right-radius: 12px; border-bottom-right-radius: 12px;"></div>
   </div>
 </div>
+
+
 
 <!-- Modal Acento -->
 <div id="modalAcento" class="modal">
