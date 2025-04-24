@@ -86,7 +86,7 @@
       background: #fff;
       border: 1px solid #ddd;
       border-radius: 12px;
-      margin-bottom: 0.001rem;
+      margin-bottom: 0.2rem;
       padding: 1.5rem;
       align-items: center;
     }
@@ -441,7 +441,7 @@
   </div>
 </div>
 
-  <div class="product" style="position: relative;">
+ <div class="product" style="position: relative;">
   <img src="img/aura.png" alt="Taza Aura">
   <div class="product-info">
     <h2>Taza Aura – Brillo Interactivo</h2>
@@ -458,8 +458,17 @@
     </div>
   </div>
 
-  <!-- Franja glitter rosa -->
-  <div style="position: absolute; top: 0; right: 0; height: 100%; width: 20px; background: repeating-linear-gradient(135deg, #f8b6d2, #f8b6d2 10px, #fff 10px, #fff 20px); border-top-right-radius: 12px; border-bottom-right-radius: 12px;"></div>
+  <!-- Franja de glitter rosa con puntos -->
+  <div style="position: absolute; top: 0; right: 0; height: 100%; width: 20px;
+  background: repeating-linear-gradient(
+    135deg,
+    #f8b8d6,
+    #f8b8d6 4px,
+    #fff 4px,
+    #fff 6px
+  );
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;">
 </div>
 
   <!-- Modal Aura -->
@@ -467,37 +476,77 @@
   <div class="modal-content">
     <span class="close" onclick="document.getElementById('modalAura').style.display='none'">&times;</span>
     <h3>Detalles de la Taza Aura</h3>
-    <p>Un toque de brillo en cada momento. Esta taza con acabado glitter rosa te conecta con tu lado más radiante. Ideal para regalos llenos de luz y estilo.</p>
+    <p>Brilla con luz propia. Esta taza con acabado glitter es ideal para quienes aman lo brillante y único.</p>
 
     <div class="especificaciones-banner">
       <div class="especificaciones-texto">
         <h4>Especificaciones</h4>
         <ul>
-          <li><span class="iconito">🔷</span> Glitter rosa brillante</li>
+          <li><span class="iconito">🔷</span> Glitter rosa, dorado o plateado</li>
+          <li><span class="iconito">🔷</span> Apta para microondas</li>
           <li><span class="iconito">🔷</span> Cerámica premium</li>
           <li><span class="iconito">🔷</span> Sublimado de alta calidad</li>
           <li><span class="iconito">🔷</span> QR personalizado escaneable</li>
         </ul>
       </div>
-      <div class="especificaciones-rectangulo" style="background: repeating-linear-gradient(135deg, #f8b6d2, #f8b6d2 10px, #fff 10px, #fff 20px);"></div>
+      <div class="especificaciones-rectangulo"></div>
     </div>
 
+    <h4 style="margin-top: 2rem;">Colores disponibles</h4>
+    <div class="color-grid" id="colorGridAura">
+      <div class="color-option" style="background-color: #f8b8d6;" title="Rosa"></div>
+      <div class="color-option" style="background-color: gold;" title="Dorado"></div>
+      <div class="color-option" style="background-color: silver;" title="Plateado"></div>
+    </div>
+
+    <p id="colorSeleccionadoAura" style="margin-top: 1rem; font-weight: 600; color: #333;"></p>
     <a href="https://wa.me/5210000000000" target="_blank">
       <button class="btn-primary" style="margin-top: 2rem;">Personalizar pedido</button>
     </a>
   </div>
 </div>
+<script>
+  // Script para seleccionar color de Aura
+  document.querySelectorAll('#colorGridAura .color-option').forEach(option => {
+    option.addEventListener('click', () => {
+      const wasSelected = option.classList.contains('selected');
+      document.querySelectorAll('#colorGridAura .color-option').forEach(opt => {
+        opt.classList.remove('selected', 'unselected');
+      });
+
+      const label = document.getElementById('colorSeleccionadoAura');
+      if (!wasSelected) {
+        option.classList.add('selected');
+        document.querySelectorAll('#colorGridAura .color-option').forEach(opt => {
+          if (!opt.classList.contains('selected')) {
+            opt.classList.add('unselected');
+          }
+        });
+
+        const colorMap = {
+          'rgb(248, 184, 214)': 'rosa',
+          'rgb(255, 215, 0)': 'dorado',
+          'rgb(192, 192, 192)': 'plateado'
+        };
+
+        const selectedColor = window.getComputedStyle(option).backgroundColor;
+        label.textContent = 'Color elegido: ' + (colorMap[selectedColor] || 'desconocido');
+      } else {
+        label.textContent = '';
+      }
+    });
+  });
+</script>
 
 <script>
   window.onclick = function(event) {
-    ['modalAcento', 'modalEssencia'].forEach(id => {
-      const modal = document.getElementById(id);
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-  };
-
+    ['modalAcento', 'modalEssencia', 'modalRevelacion', 'modalAura'].forEach(id => {
+    const modal = document.getElementById(id);
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+};
   document.querySelectorAll('.color-option').forEach(option => {
     option.addEventListener('click', () => {
       const wasSelected = option.classList.contains('selected');
