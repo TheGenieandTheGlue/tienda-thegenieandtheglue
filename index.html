@@ -465,7 +465,8 @@
   background-position: center;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;">
-</div>
+</div> <!-- cierre de .product -->
+</div> <!-- cierre de .product-section -->
 
 
 <!-- Modal Aura -->
@@ -528,8 +529,9 @@
           'rgb(192, 192, 192)': 'plateado'
         };
 
-        const selectedColor = window.getComputedStyle(option).backgroundColor;
-        label.textContent = 'Color elegido: ' + (colorMap[selectedColor] || 'desconocido');
+       const selectedColor = option.getAttribute('title');
+label.textContent = 'Color elegido: ' + selectedColor;
+
       } else {
         label.textContent = '';
       }
