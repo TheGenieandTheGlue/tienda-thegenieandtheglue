@@ -441,6 +441,52 @@
   </div>
 </div>
 
+  <div class="product" style="position: relative;">
+  <img src="img/aura.png" alt="Taza Aura">
+  <div class="product-info">
+    <h2>Taza Aura – Brillo Interactivo</h2>
+    <ul>
+      <li>11 Oz</li>
+      <li>Acabado con glitter rosa ✨</li>
+      <li>Diseño Personalizado</li>
+      <li>QR Interactivo 📱</li>
+    </ul>
+    <div class="price">$285.00 MXN</div>
+    <div class="buttons">
+      <button class="btn-primary">Personalizar y Pedir</button>
+      <button class="btn-secondary" onclick="document.getElementById('modalAura').style.display='block'">Ver Detalles</button>
+    </div>
+  </div>
+
+  <!-- Franja glitter rosa -->
+  <div style="position: absolute; top: 0; right: 0; height: 100%; width: 20px; background: repeating-linear-gradient(135deg, #f8b6d2, #f8b6d2 10px, #fff 10px, #fff 20px); border-top-right-radius: 12px; border-bottom-right-radius: 12px;"></div>
+</div>
+
+  <!-- Modal Aura -->
+<div id="modalAura" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('modalAura').style.display='none'">&times;</span>
+    <h3>Detalles de la Taza Aura</h3>
+    <p>Un toque de brillo en cada momento. Esta taza con acabado glitter rosa te conecta con tu lado más radiante. Ideal para regalos llenos de luz y estilo.</p>
+
+    <div class="especificaciones-banner">
+      <div class="especificaciones-texto">
+        <h4>Especificaciones</h4>
+        <ul>
+          <li><span class="iconito">🔷</span> Glitter rosa brillante</li>
+          <li><span class="iconito">🔷</span> Cerámica premium</li>
+          <li><span class="iconito">🔷</span> Sublimado de alta calidad</li>
+          <li><span class="iconito">🔷</span> QR personalizado escaneable</li>
+        </ul>
+      </div>
+      <div class="especificaciones-rectangulo" style="background: repeating-linear-gradient(135deg, #f8b6d2, #f8b6d2 10px, #fff 10px, #fff 20px);"></div>
+    </div>
+
+    <a href="https://wa.me/5210000000000" target="_blank">
+      <button class="btn-primary" style="margin-top: 2rem;">Personalizar pedido</button>
+    </a>
+  </div>
+</div>
 
 <script>
   window.onclick = function(event) {
