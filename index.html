@@ -440,38 +440,39 @@
     </a>
   </div>
 </div>
+  <div class="product-section">
+  <div class="product" style="position: relative;">
+    <img src="img/aura.png" alt="Taza Aura">
+    <div class="product-info">
+      <h2>Taza Aura – Brillo Interactivo</h2>
+      <ul>
+        <li>11 Oz</li>
+        <li>Acabado con glitter rosa ✨</li>
+        <li>Diseño Personalizado</li>
+        <li>QR Interactivo 📱</li>
+      </ul>
+      <div class="price">$285.00 MXN</div>
+      <div class="buttons">
+        <button class="btn-primary">Personalizar y Pedir</button>
+        <button class="btn-secondary" onclick="document.getElementById('modalAura').style.display='block'">Ver Detalles</button>
+      </div>
+    </div>
 
- <div class="product" style="position: relative;">
-  <img src="img/aura.png" alt="Taza Aura">
-  <div class="product-info">
-    <h2>Taza Aura – Brillo Interactivo</h2>
-    <ul>
-      <li>11 Oz</li>
-      <li>Acabado con glitter rosa ✨</li>
-      <li>Diseño Personalizado</li>
-      <li>QR Interactivo 📱</li>
-    </ul>
-    <div class="price">$285.00 MXN</div>
-    <div class="buttons">
-      <button class="btn-primary">Personalizar y Pedir</button>
-      <button class="btn-secondary" onclick="document.getElementById('modalAura').style.display='block'">Ver Detalles</button>
+    <!-- Franja de glitter rosa con puntos -->
+    <div style="position: absolute; top: 0; right: 0; height: 100%; width: 20px;
+      background: repeating-linear-gradient(
+        135deg,
+        #f8b8d6,
+        #f8b8d6 4px,
+        #fff 4px,
+        #fff 6px
+      );
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;">
     </div>
   </div>
 
-  <!-- Franja de glitter rosa con puntos -->
-  <div style="position: absolute; top: 0; right: 0; height: 100%; width: 20px;
-  background: repeating-linear-gradient(
-    135deg,
-    #f8b8d6,
-    #f8b8d6 4px,
-    #fff 4px,
-    #fff 6px
-  );
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;">
-</div>
-
-  <!-- Modal Aura -->
+<!-- Modal Aura -->
 <div id="modalAura" class="modal">
   <div class="modal-content">
     <span class="close" onclick="document.getElementById('modalAura').style.display='none'">&times;</span>
@@ -505,8 +506,9 @@
     </a>
   </div>
 </div>
+
+<!-- Script para color de Aura -->
 <script>
-  // Script para seleccionar color de Aura
   document.querySelectorAll('#colorGridAura .color-option').forEach(option => {
     option.addEventListener('click', () => {
       const wasSelected = option.classList.contains('selected');
@@ -537,6 +539,7 @@
     });
   });
 </script>
+
 
 <script>
   window.onclick = function(event) {
